@@ -263,6 +263,11 @@ h6 {
   border-color: #4ac959 !important;
 }
 
+.share-buttons .telegram-btn {
+  background-color: #26a4cb !important;
+  border-color: #26a4cb !important;
+}
+
 .share-buttons .email-btn {
   background-color: #3c4858 !important;
   border-color: #3c4858 !important;

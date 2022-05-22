@@ -119,6 +119,12 @@
                   <i class="fab fa-whatsapp"></i>
                 </a>
             {{ end }}
+            {{ if site.Params.features.blog.shareButtons.telegram }}
+            <a class="btn btn-sm telegram-btn" href="https://telegram.me/share/url?url={{ .Permalink }}&text={{ .Title }}"
+              target="_blank">
+              <i class="fab fa-telegram"></i>
+            </a>
+            {{ end }}
             {{ if site.Params.features.blog.shareButtons.email }}
                 <a class="btn btn-sm email-btn" href="mailto:?subject={{ .Title }}&body={{ .Permalink }}" target="_blank">
                   <i class="fas fa-envelope-open-text"></i>
