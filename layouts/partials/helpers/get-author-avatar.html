@@ -3,17 +3,17 @@
 {{ $author = (index site.Data site.Language.Lang).author }}
 {{ end }}
 
-{{/* default author image */}}
-{{ $authorImage:= "images/author/pic.png" }}
-{{ if $author.image }}
-{{ $authorImage = $author.image }}
+{{/* default author avatar */}}
+{{ $authorImage:= "images/author/avatar.png" }}
+{{ if $author.avatar }}
+{{ $authorImage = $author.avatar }}
 {{ end }}
 
 {{/* if author image is provided in author's data, then use that */}}
 {{ if eq (printf "%T" .Params.author ) "maps.Params" }}
 {{ with .Params.author }}
 {{ if .image }}
-{{ $authorImage = .image }}
+{{ $authorImage = .avatar }}
 {{ end }}
 {{ end }}
 {{ end }}
@@ -22,7 +22,7 @@
 {{ $authorImage:= resources.Get $authorImage}}
 
 {{ if and $authorImage (and (ne $authorImage.MediaType.SubType "svg") ( ne $authorImage.MediaType.SubType "gif")) }}
-{{ $authorImage = $authorImage.Fit "120x120" }}
+{{ $authorImage = $authorImage.Fit "150x150" }}
 {{ end }}
 
 {{/* return the author image link */}}
